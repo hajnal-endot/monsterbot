@@ -1,0 +1,30 @@
+import discord
+import logging
+
+client = discord.Client()
+
+logging.basicConfig(level=logging.INFO)
+
+
+
+@client.event
+async def on_ready():
+    print('We have logged in as {0.user}'.format(client))
+
+
+@client.event
+async def on_message(message):
+    if message.author == client.user:
+        return
+
+    if message.content.startswith('$hello'):
+        await message.channel.send('why was i created only to suffer')
+
+    if message.content.startswith('$fuck off'):
+        await message.channel.send('what have i done wrong')
+
+    if message.content.startswith('make me a sandwich'):
+        await message.channel.send('🥪')
+
+
+client.run('Njk5MDQxNzU4NjM3NzE5NTUy.XpOqfw.9QGSr_xuGvhm_ZHxRby8ISpFn54')
