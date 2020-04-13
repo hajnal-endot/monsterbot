@@ -1,6 +1,6 @@
 import discord
 import logging
-asdf = '' # put your key here
+asdf = input("give me yer key")
 
 client = discord.Client()
 
